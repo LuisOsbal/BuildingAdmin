@@ -1,0 +1,21 @@
+%section.hero
+  .hero-body
+    .container.has-text-centered
+      .column.is-4.is-offset-4
+        .box
+          %h2 Forgot your password?
+          .field
+          = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+            = devise_error_messages!
+            .field
+              .control
+                = f.label :email
+                = f.email_field :email, placeholder: "Your email", autofocus: true, autocomplete: "email", :class => "input input is-medium"
+            .actions
+              = f.submit "Log in", :class => "button button is-block is-info is-fullwidth"
+        %p.has-text-grey
+          %a{:href => new_user_registration_path } Sign Up
+           · 
+          %a{:href => new_user_session_path } Sign In
+           · 
+          %a{:href => "../"} Need Help?

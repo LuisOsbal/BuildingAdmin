@@ -1,0 +1,12 @@
+es:
+  company_name: "Building Admin"
+  # menu
+  home: "Inicio"
+  about: "Sobre mi"
+  projects: "Proyectos"
+  articles: "Blog"
+  contact: "Contacto"
+  buttons:
+      sign_in: "Iniciar sesión"
+      sign_up: "Crear cuenta"
+      sign_out: "Cerrar sesión"

@@ -1,0 +1,60 @@
+%nav.navbar.navbar-guest{"aria-label" => "main navigation", :role => "navigation"}
+  .container
+    .navbar-brand
+      %a.navbar-item{:href => "/"}
+        %img{:alt => "Cronhub Logo", :src => "https://cronhub.io/img/ch-logo-grey.png"}/
+      %button.button.navbar-burger{"data-target" => "navMenu"}
+        %span
+        %span
+        %span
+    #navMenu.navbar-menu
+      .navbar-start
+        %a.navbar-item{:href => "https://docs.cronhub.io"}
+          Docs
+        %a.navbar-item{:href => "/pricing"}
+          Pricing
+        %a.navbar-item{:href => "/features"}
+          Features
+        %a.navbar-item{:href => "/faq"}
+          FAQ
+        %a.navbar-item{:href => "https://blog.cronhub.io", :target => "_blank"}
+          Blog
+      .navbar-end
+        .navbar-item
+          .field.is-grouped.is-grouped-multiline
+            - if user_signed_in?
+              .navbar-item.has-dropdown.is-hoverable
+                %a.navbar-link
+                  Account
+                .navbar-dropdown
+                  %a.navbar-item{:href => "#"}
+                    %span.icon.is-small
+                      %i.material-icons.md-18.margin-icon
+                    %span
+                      Dashboard
+                  %a.navbar-item{:href => ""}
+                    %span.icon.is-small
+                      %i.material-icons.md-18.margin-icon.is-info
+                    %span
+                      Profile
+                  %hr.navbar-divider
+                  %a.navbar-item{:href => destroy_user_session_path, :method=>'delete'}
+                    %span.icon.is-small
+                      %i.material-icons.md-18.sign-out.margin-icon
+                    %span= t("buttons.sign_out")
+            - else
+              .navbar-item
+                .navbar-item
+                  %a.link{:href => new_user_session_path}= t("buttons.sign_in")
+                .navbar-item
+                  %a.link{:href => new_user_registration_path}= t("buttons.sign_up")
+                -# %p.control
+                -#   %a.bd-tw-button.button.is-small{:href => new_user_session_path}
+                -#     %span.icon
+                -#       %i.fa.fas.fa-user
+                -#     %span= t("buttons.sign_in")
+                -# %p.control
+                -#   %a.bd-tw-button.button.is-small.primary-button{:href => new_user_registration_path}
+                -#     %span.icon
+                -#       %i.fa.fas.fa-user-plus
+                -#     %span= t("buttons.sign_up")

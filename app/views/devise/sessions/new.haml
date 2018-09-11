@@ -1,0 +1,28 @@
+%section.hero
+  .hero-body
+    .container.has-text-centered
+      .column.is-4.is-offset-4
+        .box
+          %figure.avatar
+            %img{:src => "http://www.luisosnet.com/assets/luisosnet-1aec758125618e192a7973bf90b47e95b6f361c6cbd97028d718fb71d03db0fc.png"}/
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .field
+              .control
+                = f.label :email
+                = f.email_field :email, placeholder: "Your email", autocomplete: "email", :class => "input input is-medium"
+            .field
+              .control
+                = f.label :password
+                = f.password_field :password, placeholder: "Your password", autocomplete: "off", :class => "input input is-medium"
+            - if devise_mapping.rememberable?
+              .field
+                = f.check_box :remember_me
+                = f.label :remember_me, :class => "checkbox"
+            .actions
+              = f.submit "Log in", :class => "button button is-block is-info is-fullwidth"
+        %p.has-text-grey
+          %a{:href => new_user_registration_path } Sign Up
+           · 
+          %a{:href => new_user_password_path } Forgot Password
+           · 
+          %a{:href => "../"} Need Help?
