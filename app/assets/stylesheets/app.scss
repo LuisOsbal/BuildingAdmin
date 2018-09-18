@@ -9,8 +9,8 @@
 }
 
 .navbar-guest {
-  border-top: 6px solid #4c3dc4;
-  border-bottom: 1px solid #e8e8e8;
+  border-top: 6px solid $primary-color;
+  border-bottom: 1px solid $gray1;
   // min-height: 4.25rem!important;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .link {
-  color: #7763a9;
+  color: $primary-color;
   cursor: pointer;
   text-decoration: none;
   font-size: 12px;
