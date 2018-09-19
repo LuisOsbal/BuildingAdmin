@@ -9,11 +9,11 @@
             .field
               .control
                 = f.label :email
-                = f.email_field :email, placeholder: "Your email", autocomplete: "email", :class => "input input is-medium"
+                = f.email_field :email, :required => true, placeholder: "Your email", autocomplete: "email", :class => "input input is-medium"
             .field
               .control
                 = f.label :password
-                = f.password_field :password, placeholder: "Your password", autocomplete: "off", :class => "input input is-medium"
+                = f.password_field :password, :required => true, placeholder: "Your password", autocomplete: "off", :class => "input input is-medium"
             - if devise_mapping.rememberable?
               .field
                 = f.check_box :remember_me

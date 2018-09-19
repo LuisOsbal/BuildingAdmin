@@ -56,11 +56,6 @@ gem 'kaminari'
 
 gem 'devise'
 
-gem 'mail_form'
-# Simple Form aims to be as flexible as possible while helping you with powerful
-# components to create your forms.
-gem 'simple_form'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
   # console
